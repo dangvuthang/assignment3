@@ -5,7 +5,7 @@ if (!(sessionStorage.getItem("name") && sessionStorage.getItem("room"))) {
 const currentUserName = sessionStorage.getItem("name");
 const currentRoom = sessionStorage.getItem("room");
 
-const socket = io("http://localhost:5000");
+const socket = io("https://assignment3-it.herokuapp.com");
 socket.emit("joinChat", { username: currentUserName, room: currentRoom });
 const inputMessage = document.querySelector("#chatMessage");
 const formMessage = document.querySelector("#formMessage");
