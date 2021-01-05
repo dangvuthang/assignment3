@@ -7,5 +7,10 @@ joinForm.addEventListener("submit", e => {
   if (roomInput.value === "") return alert("Please provide a room to join");
   sessionStorage.setItem("name", nameInput.value);
   sessionStorage.setItem("room", roomInput.value);
-  window.location = `${location.origin}/chat-room.html`;
+  const currentLocation = location.href;
+  if (currentLocation.includes("/index.html")) {
+    const url = currentLocation.replace("index.html", "chat-room.html");
+    return (window.location = url);
+  }
+  window.location = location.href + "chat-room.html";
 });
