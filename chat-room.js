@@ -1,10 +1,9 @@
-if (!location.search.slice(1).match(/^name=\S+&room=\S+$/)) {
-  alert("Please provide your name and room in the main page to continue");
-  window.location = location.origin;
+if (!(sessionStorage.getItem("name") && sessionStorage.getItem("room"))) {
+  alert("Please provide your name and room to continue");
+  window.location = window.origin;
 }
-const indexOf = location.search.indexOf("&");
-const currentUserName = location.search.substring(6, indexOf);
-const currentRoom = location.search.substring(indexOf + 6);
+const currentUserName = sessionStorage.getItem("name");
+const currentRoom = sessionStorage.getItem("room");
 
 const socket = io("http://localhost:5000");
 socket.emit("joinChat", { username: currentUserName, room: currentRoom });
