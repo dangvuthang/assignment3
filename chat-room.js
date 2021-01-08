@@ -4,8 +4,8 @@ if (!(sessionStorage.getItem("name") && sessionStorage.getItem("room"))) {
 }
 const currentUserName = sessionStorage.getItem("name");
 const currentRoom = sessionStorage.getItem("room");
-
-const socket = io("https://assignment3-it.herokuapp.com");
+let numberOfUsers = 0;
+const socket = io("http://localhost:5000");
 socket.emit("joinChat", { username: currentUserName, room: currentRoom });
 const inputMessage = document.querySelector("#chatMessage");
 const formMessage = document.querySelector("#formMessage");
@@ -92,6 +92,9 @@ socket.on("message", messageObj => {
 
 socket.on("roomUsers", roomUsersObj => {
   const { room, users } = roomUsersObj;
+  console.log("ENTER");
+  console.log(room, users.length);
+  numberOfUsers = users.length;
   // showRoom(room);
   showUsers(users);
 });
@@ -100,7 +103,37 @@ formMessage.addEventListener("submit", e => {
   e.preventDefault();
   const value = inputMessage.value;
   socket.emit("chatMessage", value);
+  if (numberOfUsers === 1) {
+    console.log("Enter chatbox");
+    chatBotResponse(value);
+  }
 
   inputMessage.value = "";
   inputMessage.focus();
 });
+
+function chatBotResponse(value) {
+  let message;
+  if (value.toLowerCase().includes("your name")) {
+    message = "My name is Chatbox. Nice to meet you.";
+  }
+  // Write your code here
+  else if (value.includes("what time is it")) {
+    message = `It is currently ${new Date().getHours()}:${new Date().getMinutes()}`;
+  } else if (value.includes("how are you")) {
+    message = `I am fine. Thank you for asking :))`;
+  } else {
+    message = "Sorry i am not smart enough to understand your question now :((";
+  }
+  htmltag = `
+    <div class="chat-message-center pb-4">
+      <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
+        <div class="font-weight-bold mb-1">Chatbox</div>
+        ${message}
+      </div>
+    </div>`;
+  setTimeout(
+    () => chatMessageBox.insertAdjacentHTML("beforeend", htmltag),
+    1000
+  );
+}
