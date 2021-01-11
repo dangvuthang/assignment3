@@ -127,20 +127,30 @@ function chatBotResponse(userInput) {
     message = `I am fine. Thank you for asking :))`;
   } else if (value.includes("what's up")) {
     message = `Yo, friend!`;
-  } else if (value.includes("how to talk with crush")) {
+  } else if (value.includes("how to talk to your crush")) {
     message = `I have no idea :))`;
   } else if (value.includes("I am bored today")) {
     message = `You can play games`;
   } else if (value.includes("I am happy today")) {
-    message = `Oh. great!`;
+    message = `Great to hear that!`;
   } else if (value.includes("what should I do")) {
     message = `Play soccer, play video games, watch movies, etc.`;
-  } else if (value.includes("how to have girlfriend")) {
+  } else if (value.includes("how to have a lover")) {
     message = `Learn guitar or ukulele and sing for her/him`;
   } else if (value.includes("your favorite movies")) {
     message = `Marvel Series, Tenet, Inception, The Dark Knight, Memento, etc. `;
   } else if (value.includes("your favorite video games")) {
     message = `League Of Lengends, Overwatch, Farm Together, Genshin Impact`;
+  }  else if (value.includes("what are you doing")) {
+    message = `talking with the sweetest person on Earth (｡•̀ᴗ-)✧`;
+  }  else if (value.includes("your favorite color")) {
+    message = `My favorite color is blue. Fun fact: blue actually slows your metabolism. That's why fast-food chains rarely use blue in their logos ^^`;
+  }  else if (value.includes("who are you")) {
+    message = `where are you from`;
+  }  else if (value.includes("the love and care of TTCN")) {
+    message = `your personal emotional support <(･ω<)☆`;
+  }  else if (value.includes("tell me a joke")) {
+    message = `I'm on a seafood diet. I see food I eat it.`;
   } else if (value.includes(" ")) {
     message = `Hmm? Are you trying to say something?`;
   } else {
