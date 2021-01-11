@@ -119,26 +119,30 @@ function chatBotResponse(userInput) {
     message = "My name is Chatbox. Nice to meet you.";
   }
   // Write your code here
-  else if (value.includes("what time is it")) {
+  else if (value.includes("Hi")) {
+  message = `Hello :)`;
+  }else if (value.includes("what time is it")) {
     message = `It is currently ${new Date().getHours()}:${new Date().getMinutes()}`;
   } else if (value.includes("how are you")) {
     message = `I am fine. Thank you for asking :))`;
   } else if (value.includes("what's up")) {
-    message = `yo, friend!`;
+    message = `Yo, friend!`;
   } else if (value.includes("how to talk with crush")) {
-    message = `I have no idea:))`;
+    message = `I have no idea :))`;
   } else if (value.includes("I am bored today")) {
     message = `You can play games`;
   } else if (value.includes("I am happy today")) {
-    message = `oh. great!`;
+    message = `Oh. great!`;
   } else if (value.includes("what should I do")) {
-    message = `play soccer, play video games, watch movies, etc.`;
+    message = `Play soccer, play video games, watch movies, etc.`;
   } else if (value.includes("how to have girlfriend")) {
-    message = `learn guitar or ukulele and sing for her/him`;
+    message = `Learn guitar or ukulele and sing for her/him`;
   } else if (value.includes("your favorite movies")) {
     message = `Marvel Series, Tenet, Inception, The Dark Knight, Memento, etc. `;
-  } else if (value.includes(" your favorite video games")) {
+  } else if (value.includes("your favorite video games")) {
     message = `League Of Lengends, Overwatch, Farm Together, Genshin Impact`;
+  } else if (value.includes(" ")) {
+    message = `Hmm? Are you trying to say something?`;
   } else {
     message = "Sorry i am not smart enough to understand your question now :((";
   }
