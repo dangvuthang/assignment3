@@ -112,9 +112,10 @@ formMessage.addEventListener("submit", e => {
   inputMessage.focus();
 });
 
-function chatBotResponse(value) {
+function chatBotResponse(userInput) {
+  let value = userInput.toLowerCase();
   let message;
-  if (value.toLowerCase().includes("your name")) {
+  if (value.includes("your name")) {
     message = "My name is Chatbox. Nice to meet you.";
   }
   // Write your code here
@@ -122,6 +123,8 @@ function chatBotResponse(value) {
     message = `It is currently ${new Date().getHours()}:${new Date().getMinutes()}`;
   } else if (value.includes("how are you")) {
     message = `I am fine. Thank you for asking :))`;
+  } else if (value.includes("hello")) {
+    message = `Hi :))`;
   } else {
     message = "Sorry i am not smart enough to understand your question now :((";
   }
