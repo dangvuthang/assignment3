@@ -122,6 +122,28 @@ function chatBotResponse(value) {
     message = `It is currently ${new Date().getHours()}:${new Date().getMinutes()}`;
   } else if (value.includes("how are you")) {
     message = `I am fine. Thank you for asking :))`;
+  } else if (value.includes("what's up")) {
+      message = `yo, friend!`;
+  } else if (value.includes("how can I get back with my girl friend")) {
+      message = `No, you can and NEVER!`;
+  } else if (value.includes("how can I talk with my crush")) {
+      message = `I have no ideav:))`;
+  } else if (value.includes("I am bored today")) {
+      message = `You can play games`;
+  } else if (value.includes("I am happy today")) {
+      message = `oh. great!`;
+  } else if (value.includes("what should I do today")) {
+      message = `play soccer, play video games, watch movies, etc.`;
+  } else if (value.includes("news about IT")) {
+      message = `you can visit this website for IT news https://techcrunch.com/`;
+  } else if (value.includes("news about Marrketing")) {
+      message = `you can visit this website for Marketing news https://neilpatel.com/blog/`;
+  } else if (value.includes("what should I do to have a girlfriend")) {
+      message = `learn guitar or ukulele and sing for her/him`;  
+  } else if (value.includes("what movies should I watch")) {
+      message = `Marvel Series, Tenet, Inception, The Dark Knight, Memento, etc. `;  
+  } else if (value.includes("what video game should I play")) {
+      message = `League Of Lengends, Overwatch, Farm Together, Genshin Impact`;
   } else {
     message = "Sorry i am not smart enough to understand your question now :((";
   }
