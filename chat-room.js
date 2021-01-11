@@ -112,9 +112,10 @@ formMessage.addEventListener("submit", e => {
   inputMessage.focus();
 });
 
-function chatBotResponse(value) {
+function chatBotResponse(userInput) {
+  let value = userInput.toLowerCase();
   let message;
-  if (value.toLowerCase().includes("your name")) {
+  if (value.includes("your name")) {
     message = "My name is Chatbox. Nice to meet you.";
   }
   // Write your code here
@@ -123,21 +124,21 @@ function chatBotResponse(value) {
   } else if (value.includes("how are you")) {
     message = `I am fine. Thank you for asking :))`;
   } else if (value.includes("what's up")) {
-      message = `yo, friend!`;
+    message = `yo, friend!`;
   } else if (value.includes("how to talk with crush")) {
-      message = `I have no idea:))`;
+    message = `I have no idea:))`;
   } else if (value.includes("I am bored today")) {
-      message = `You can play games`;
+    message = `You can play games`;
   } else if (value.includes("I am happy today")) {
-      message = `oh. great!`;
+    message = `oh. great!`;
   } else if (value.includes("what should I do")) {
-      message = `play soccer, play video games, watch movies, etc.`;
+    message = `play soccer, play video games, watch movies, etc.`;
   } else if (value.includes("how to have girlfriend")) {
-      message = `learn guitar or ukulele and sing for her/him`;  
+    message = `learn guitar or ukulele and sing for her/him`;
   } else if (value.includes("your favorite movies")) {
-      message = `Marvel Series, Tenet, Inception, The Dark Knight, Memento, etc. `;  
+    message = `Marvel Series, Tenet, Inception, The Dark Knight, Memento, etc. `;
   } else if (value.includes(" your favorite video games")) {
-      message = `League Of Lengends, Overwatch, Farm Together, Genshin Impact`;
+    message = `League Of Lengends, Overwatch, Farm Together, Genshin Impact`;
   } else {
     message = "Sorry i am not smart enough to understand your question now :((";
   }
