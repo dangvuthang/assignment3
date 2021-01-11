@@ -134,10 +134,6 @@ function chatBotResponse(value) {
       message = `oh. great!`;
   } else if (value.includes("what should I do today")) {
       message = `play soccer, play video games, watch movies, etc.`;
-  } else if (value.includes("news about IT")) {
-      message = `you can visit this website for IT news https://techcrunch.com/`;
-  } else if (value.includes("news about Marrketing")) {
-      message = `you can visit this website for Marketing news https://neilpatel.com/blog/`;
   } else if (value.includes("what should I do to have a girlfriend")) {
       message = `learn guitar or ukulele and sing for her/him`;  
   } else if (value.includes("what movies should I watch")) {
