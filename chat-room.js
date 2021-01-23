@@ -151,11 +151,17 @@ function chatBotResponse(userInput) {
   } else if (value.includes("your favorite color")) {
     message = `My favorite color is blue. Fun fact: blue actually slows your metabolism. That's why fast-food chains rarely use blue in their logos ^^`;
   } else if (value.includes("who are you")) {
-    message = `where are you from`;
-  } else if (value.includes("the love and care of TTCN")) {
     message = `your personal emotional support <(･ω<)☆`;
+  } else if (value.includes("where are you from")) {
+    message = `the love and care of Techolorgy`;
   } else if (value.includes("tell me a joke")) {
     message = `I'm on a seafood diet. I see food I eat it.`;
+  } else if (value.includes("i love you")) {
+    message = `yes i love me too <(･ω<)☆`;
+  } else if (value.includes("knock knock")) {
+    message = `the door's unlocked`;
+  } else if (value.includes("tiktok")) {
+    message = `my fyp is filled with driver license and its variations`;
   } else if (value.includes("")) {
     message = `Hmm? Are you trying to say something?`;
   } else {
