@@ -147,17 +147,19 @@ function chatBotResponse(userInput) {
   } else if (value.includes("your favorite video games")) {
     message = `League Of Lengends, Overwatch, Farm Together, Genshin Impact`;
   } else if (value.includes("what are you doing")) {
-    message = `talking with the sweetest person on Earth (｡•̀ᴗ-)✧`;
+    message = `Talking with the sweetest person on Earth (｡•̀ᴗ-)✧`;
   } else if (value.includes("your favorite color")) {
     message = `My favorite color is blue. Fun fact: blue actually slows your metabolism. That's why fast-food chains rarely use blue in their logos ^^`;
   } else if (value.includes("who are you")) {
-    message = `where are you from`;
+    message = `I am Messen Bot`;
   } else if (value.includes("the love and care of TTCN")) {
     message = `your personal emotional support <(･ω<)☆`;
   } else if (value.includes("tell me a joke")) {
     message = `I'm on a seafood diet. I see food I eat it.`;
   } else if (value.includes("")) {
     message = `Hmm? Are you trying to say something?`;
+  }  else if (value.includes("i'm glad to have talked to you")) {
+      message = `me too :)`;
   } else {
     message = "Sorry i am not smart enough to understand your question now :((";
   }
