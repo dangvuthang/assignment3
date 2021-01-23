@@ -13,7 +13,6 @@ body {
 .chat-messages {
   display: flex;
   flex-direction: column;
-  /* max-height: 800px; */
   height: 600px;
   overflow-y: scroll;
 }
@@ -51,16 +50,4 @@ body {
 }
 .border-top {
   border-top: 1px solid #dee2e6 !important;
-}
-
-body {
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.8)
-    ),
-    url("background.jpg");
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
 }
