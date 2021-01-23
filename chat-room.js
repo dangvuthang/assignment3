@@ -5,6 +5,7 @@ if (!(sessionStorage.getItem("name") && sessionStorage.getItem("room"))) {
 const currentUserName = sessionStorage.getItem("name");
 const currentRoom = sessionStorage.getItem("room");
 let numberOfUsers = 1;
+// http://localhost:5000/
 const socket = io("https://assignment3-it.herokuapp.com/");
 socket.emit("joinChat", { username: currentUserName, room: currentRoom });
 const inputMessage = document.querySelector("#chatMessage");
@@ -115,13 +116,17 @@ formMessage.addEventListener("submit", e => {
 function chatBotResponse(userInput) {
   let value = userInput.toLowerCase();
   let message;
+  value = value.replaceAll("u", "you");
+  value = value.replaceAll("ur", "your");
   if (value.includes("your name")) {
     message = "My name is Chatbox. Nice to meet you.";
   }
   // Write your code here
-  else if (value.includes("Hi")) {
-  message = `Hello :)`;
-  }else if (value.includes("what time is it")) {
+  else if (value.includes("what can you do")) {
+    message = `I can speak with you if you feel lonely`;
+  } else if (value.includes("Hi")) {
+    message = `Hello :)`;
+  } else if (value.includes("time")) {
     message = `It is currently ${new Date().getHours()}:${new Date().getMinutes()}`;
   } else if (value.includes("how are you")) {
     message = `I am fine. Thank you for asking :))`;
@@ -141,17 +146,17 @@ function chatBotResponse(userInput) {
     message = `Marvel Series, Tenet, Inception, The Dark Knight, Memento, etc. `;
   } else if (value.includes("your favorite video games")) {
     message = `League Of Lengends, Overwatch, Farm Together, Genshin Impact`;
-  }  else if (value.includes("what are you doing")) {
+  } else if (value.includes("what are you doing")) {
     message = `talking with the sweetest person on Earth (｡•̀ᴗ-)✧`;
-  }  else if (value.includes("your favorite color")) {
+  } else if (value.includes("your favorite color")) {
     message = `My favorite color is blue. Fun fact: blue actually slows your metabolism. That's why fast-food chains rarely use blue in their logos ^^`;
-  }  else if (value.includes("who are you")) {
+  } else if (value.includes("who are you")) {
     message = `where are you from`;
-  }  else if (value.includes("the love and care of TTCN")) {
+  } else if (value.includes("the love and care of TTCN")) {
     message = `your personal emotional support <(･ω<)☆`;
-  }  else if (value.includes("tell me a joke")) {
+  } else if (value.includes("tell me a joke")) {
     message = `I'm on a seafood diet. I see food I eat it.`;
-  } else if (value.includes(" ")) {
+  } else if (value.includes("")) {
     message = `Hmm? Are you trying to say something?`;
   } else {
     message = "Sorry i am not smart enough to understand your question now :((";
